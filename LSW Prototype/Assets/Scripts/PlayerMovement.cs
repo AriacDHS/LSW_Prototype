@@ -11,10 +11,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        //Input values for x and y
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        //Clamp for diagonal move speed = horizontal/vertical move speed
         movement = Vector2.ClampMagnitude(movement, 1f);
 
+        //Animator values
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("moveSpeed", movement.sqrMagnitude);
@@ -22,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        //Movement
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
