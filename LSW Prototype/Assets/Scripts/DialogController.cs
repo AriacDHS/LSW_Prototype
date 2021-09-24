@@ -22,6 +22,7 @@ public class DialogController : MonoBehaviour
         {
             shopButton.SetActive(true);
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
