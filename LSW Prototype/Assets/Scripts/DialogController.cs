@@ -15,6 +15,9 @@ public class DialogController : MonoBehaviour
     public bool isTrigger=false;
     public GameObject chatBox; 
     public GameObject shopButton;
+    public GameObject shopBox;
+
+    //Verify if the player is closer to the NPC
 
     void Update()
     {
@@ -40,8 +43,11 @@ public class DialogController : MonoBehaviour
             isTrigger=false;
             shopButton.SetActive(false);
             chatBox.SetActive(false);
+            shopBox.SetActive(false);
         }
     }
+
+    //NPC Chatbox
 
     void NextSentence()
     {

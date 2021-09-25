@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     public Animator animator;
 
+    //currency
+    public static float coins = 90;
     void Update()
     {
         //Input values for x and y
