@@ -13,8 +13,16 @@ public class ShopController : MonoBehaviour
     public Button buy01, buy02, buy03, buy04;
     public GameObject failScreen;
 
+    public Text cost, sellcost;
+
+
     void Update()
-    {
+    {   
+        //shop prices
+
+        cost.text = "" + price;
+        sellcost.text = "" + price * 0.6f;
+
         //if the item was bought or not
         if(itemID01)
         {
