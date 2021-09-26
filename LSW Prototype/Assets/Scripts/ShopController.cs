@@ -24,7 +24,7 @@ public class ShopController : MonoBehaviour
         sellcost.text = "" + price * 0.6f;
 
         //if the item was bought or not
-        if(itemID01)
+        if(itemID01 && !SkinChanger.equip1)
         {
             sell01.interactable = true;
         }else{
@@ -32,7 +32,7 @@ public class ShopController : MonoBehaviour
             buy01.interactable = true;
         }
 
-        if(itemID02)
+        if(itemID02 && !SkinChanger.equip2)
         {
             sell02.interactable = true;
         }else{
@@ -40,7 +40,7 @@ public class ShopController : MonoBehaviour
             buy02.interactable = true;
         }
 
-        if(itemID03)
+        if(itemID03 && !SkinChanger.equip3)
         {
             sell03.interactable = true;
         }else{
@@ -48,7 +48,7 @@ public class ShopController : MonoBehaviour
             buy03.interactable = true;
         }
         
-        if(itemID04)
+        if(itemID04 && !SkinChanger.equip4)
         {
             sell04.interactable = true;
         }else{
@@ -71,7 +71,6 @@ public class ShopController : MonoBehaviour
         {
             PlayerMovement.coins-=price;
             itemID01=true;
-            Debug.Log(PlayerMovement.coins);
         }
         else
         {
@@ -92,7 +91,6 @@ public class ShopController : MonoBehaviour
         {
             PlayerMovement.coins-=price;
             itemID02=true;
-            Debug.Log(PlayerMovement.coins);
         }
         else
         {
@@ -113,7 +111,6 @@ public class ShopController : MonoBehaviour
         {
             PlayerMovement.coins-=price;
             itemID03=true;
-            Debug.Log(PlayerMovement.coins);
         }
         else
         {
@@ -134,7 +131,6 @@ public class ShopController : MonoBehaviour
         {
             PlayerMovement.coins-=price;
             itemID04=true;
-            Debug.Log(PlayerMovement.coins);
         }
         else
         {
@@ -148,27 +144,23 @@ public class ShopController : MonoBehaviour
     {
         PlayerMovement.coins+=price*0.6f;
         itemID01 = false;
-        Debug.Log(PlayerMovement.coins);
     }
 
     public void Sell2()
     {
         PlayerMovement.coins+=price*0.6f;
         itemID02 = false;
-        Debug.Log(PlayerMovement.coins);
     }
 
     public void Sell3()
     {
         PlayerMovement.coins+=price*0.6f;
         itemID03 = false;
-        Debug.Log(PlayerMovement.coins);
     }
 
     public void Sell4()
     {
         PlayerMovement.coins+=price*0.6f;
         itemID04 = false;
-        Debug.Log(PlayerMovement.coins);
     }
 }

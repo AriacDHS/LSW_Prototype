@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 movement;
     public Animator animator;
+
+    public GameObject pauseScreen;
 
     //currency
     public static float coins = 90;
@@ -24,11 +27,22 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("moveSpeed", movement.sqrMagnitude);
+
+        //Options menu
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            pauseScreen.SetActive(true);
+        }
     }
 
     void FixedUpdate()
     {
         //Movement
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
